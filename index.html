@@ -4,9 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-  </head>
-  <body>
-    <div id="app"></div>
     <script type="module" src="/main.js"></script>
+  </head>
+  <body class="blurred">
+    <header class="header">
+      <div class="header-top">
+        <img
+          src="./public/weather-icons/cloud.svg"
+          class="weather-icon large"
+          data-current-icon
+        />
+        <div class="header-current-temp">
+          <span data-current-temp></span>&deg;
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="info-group">
+          <div class="label">High</div>
+          <div><span data-current-high></span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Wind</div>
+          <div>
+            <span data-current-wind></span><span class="small-info"> kmh</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <div class="label">Fells Like High</div>
+          <div><span data-current-fl-high></span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Low</div>
+          <div><span data-current-low></span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Precip</div>
+          <div>
+            <span data-current-precip></span
+            ><span class="small-info">&percnt;</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <div class="label">Feels Like Low</div>
+          <div><span data-current-fl-low></span>&deg;</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" data-daily-section></section>
+
+    <section class="section" data-hourly-section></section>
+
+    <template id="day-card-template">
+      <div class="section-card">
+        <div data-date></div>
+        <img data-icon class="weather-icon" />
+        <div class="info-group fs">
+          <div class="label small">Temp:</div>
+          <div><span data-temp></span>&deg;</div>
+        </div>
+      </div>
+    </template>
+    <template id="hour-card-template">
+      <div class="section-card">
+        <div>
+          <div data-day></div>
+          <div class="fs" data-time></div>
+        </div>
+        <img data-icon class="weather-icon" />
+        <div class="details">
+          <div class="info-group fs">
+            <div class="label">Temp</div>
+            <div><span data-temp></span>&deg;</div>
+          </div>
+          <div class="info-group fs">
+            <div class="label">Feels Like</div>
+            <div><span data-fl-temp></span>&deg;</div>
+          </div>
+          <div class="info-group fs">
+            <div class="label">Precip</div>
+            <div>
+              <span data-precip></span><span class="small-info">&percnt;</span>
+            </div>
+          </div>
+          <div class="info-group fs">
+            <div class="label">Wind</div>
+            <div>
+              <span data-wind></span><span class="small-info">kmh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
